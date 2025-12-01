@@ -3,11 +3,24 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+function Header(){
+  return (
+    <div>
+      <img src='' alt="Le logo MBDS que je n'ai pas."></img>
+      <h1>Introduction à React</h1>
+      <h3>A la découverte des premières notions de React</h3>
+      Welcome to my app
+
+    </div>
+  )
+}
+
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+    <Header/>
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
