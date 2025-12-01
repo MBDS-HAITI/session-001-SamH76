@@ -16,17 +16,21 @@ function Header(){
 }
 
 function MainContent(){
+  const date = new Date();
   return(
  <div>
-  <p>Ici, nous afficherons des informations interessantes :) </p>
+  <p>Bonjour, on est le {date.getDate()}/{date.getMonth() +1 }/{date.getFullYear()} et il est {date.getHours()}:{date.getMinutes()}:{date.getSeconds()} </p>
  </div>
   )
 }
 
+
 function Footer(){
+  
+  const date = new Date();
   return (
     <footer>
-      Tous droits réservés - <b>Henry Samantha</b>
+      {date.getFullYear()} - <b>Henry Samantha</b>, tous droits réservés.
     </footer>
   )
 }
