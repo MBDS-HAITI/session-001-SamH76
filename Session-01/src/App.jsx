@@ -6,7 +6,7 @@ import './App.css'
 function Header(){
   return (
     <div>
-      <img src='' alt="Le logo MBDS que je n'ai pas."></img>
+      <img src='/mbds_logo_transparent.svg' alt="Le logo MBDS que je n'ai pas."></img>
       <h1>Introduction à React</h1>
       <h3>A la découverte des premières notions de React</h3>
       <hr/>
@@ -23,6 +23,14 @@ function MainContent(){
   )
 }
 
+function Footer(){
+  return (
+    <footer>
+      Tous droits réservés - <b>Henry Samantha</b>
+    </footer>
+  )
+}
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -30,6 +38,7 @@ function App() {
     <>
     <Header/>
     <MainContent/>
+    <Footer/>
       {/* <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />

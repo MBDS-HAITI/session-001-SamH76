@@ -28,8 +28,7 @@ npm run dev
 3. Commit avec le message "TD01 : Ajouter un composant pour le contenu principal de la page"
 4. Ajouter un composant Footer contenant le texte "Tous droits réservés - [Nom] [Prénom]" - Le texte doit s'afficher tout en bas de la page et centré au millieu
 5. Commit avec le message "TD01 : Ajouter un footer"
-6. Push 
-
+6. Push
 
 ## TD02 : Contenu dynamique 
 1. Modifier le composant MainContent du TD précédent pour afficher le texte suivant "Bonjour, on est le [Jour], [Mois], [Annee] et il est [Heure]:[Minute]:[Second]"
