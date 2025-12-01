@@ -9,9 +9,17 @@ function Header(){
       <img src='' alt="Le logo MBDS que je n'ai pas."></img>
       <h1>Introduction à React</h1>
       <h3>A la découverte des premières notions de React</h3>
-      Welcome to my app
-
+      <hr/>
     </div>
+    
+  )
+}
+
+function MainContent(){
+  return(
+ <div>
+  <p>Ici, nous afficherons des informations interessantes :) </p>
+ </div>
   )
 }
 
@@ -21,7 +29,8 @@ function App() {
   return (
     <>
     <Header/>
-      <div>
+    <MainContent/>
+      {/* <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -40,7 +49,7 @@ function App() {
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
-      </p>
+      </p> */}
     </>
   )
 }
