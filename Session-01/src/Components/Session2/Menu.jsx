@@ -5,7 +5,7 @@ const menus = [
     "Notes",
     "Etudiants",
     "Matieres",
-    "Apropos",
+    "A Propos",
     "Accueil"
  ] 
 

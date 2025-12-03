@@ -39,7 +39,7 @@ case "Matieres" :
 case "Notes" : 
     return (<Notes/>)
 
-case "APropos":
+case "A Propos":
     return (<APropos/>)
 case "Accueil":
     return (

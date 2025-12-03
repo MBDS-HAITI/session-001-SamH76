@@ -1,4 +1,3 @@
-
 import * as React from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -7,47 +6,27 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import data from "../../assets/data.json"
-
-function Matieres(){
-    return (
-        <BasicTable rows={data}/>
-    )
-}
 
 function BasicTable({ rows }) {
-    
-    let newList = [];
-newList.push(rows[0]);
-let exists;
-rows.forEach((element) => {
-    exists = false;
-    for(let i = 0; i < newList.length; i++)
-    {
-    if(element.course === newList[i].course && element.course === newList[i].course){
-        exists = true;
-        break;
-    }
-    }
-    if(!exists){
-        newList.push(element);
-    }
-});
-    
-    return (
+  return (
     <TableContainer component={Paper}>
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>Matières</TableCell>
+            <TableCell>Prénom</TableCell>
+            <TableCell>Nom</TableCell>
+            <TableCell>Date</TableCell>
+            <TableCell>Note</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {newList.map((row, index) => (
+          {rows.map((row, index) => (
             <TableRow key={index}>
-              <TableCell>{row.course}</TableCell>
+              <TableCell>{row.firstname}</TableCell>
+              <TableCell>{row.lastname}</TableCell>
+              <TableCell>{row.date}</TableCell>
+              <TableCell>{row.grade}</TableCell>
             </TableRow>
-            
           ))}
         </TableBody>
       </Table>
@@ -55,4 +34,4 @@ rows.forEach((element) => {
   );
 }
 
-export {Matieres}
+export {BasicTable}
