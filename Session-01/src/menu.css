@@ -1,0 +1,32 @@
+/* Conteneur du menu (en haut à gauche) */
+.menu-container {
+  position: fixed;
+  top: 20px;   
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Style des items du menu */
+.menu-item {
+  background-color: #eaeaee;
+ /* color: rgb(13, 5, 5);*/
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+/* Effet hover */
+.menu-item:hover {
+  background-color: #343453;
+  transform: translateX(4px);
+}
+
+/* Effet clic */
+.menu-item:active {
+  transform: scale(0.95);
+}

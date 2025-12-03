@@ -9,7 +9,10 @@ html {
   line-height: 1.5;
 
   color: #ebe7ef;
-  background: radial-gradient(#280a48, #20043d);
+  /*background: radial-gradient(circle at 30% 30%, #1a0e5e 0%, #0f0733 40%, #f5f3f6 100%);*/
+  background-color: #140524;
+  height: 100vh;
+  margin: 0;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -147,4 +150,23 @@ main h2 {
 
 #tab-content code {
   font-size: 1rem;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  text-align: center;
+  padding: 12px 0;
+
+  background: rgba(0, 0, 0, 0.55);
+  color: white;
+
+  backdrop-filter: blur(4px);
+}
+
+main {
+  flex: 1;
 }
