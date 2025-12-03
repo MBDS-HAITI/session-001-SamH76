@@ -11,7 +11,8 @@ function Header(){
   )
 }
 
-function MainContent1(){
+
+function ShowDateAndHours(){
   const date = new Date();
   return(
  <div>
@@ -32,4 +33,4 @@ function Footer(){
 }
 
 
-export {Header, MainContent1, Footer}
+export {Header, ShowDateAndHours as MainContent1, Footer}

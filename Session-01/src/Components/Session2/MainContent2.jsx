@@ -1,4 +1,9 @@
 import data from '../../assets/data.json'
+import { Etudiants } from './Etudiants';
+import { Notes } from './Notes';
+import { Matieres } from './Matieres';
+import { APropos } from './APropos';
+import { Header} from '../Session1';
 
 function MainContent2({index}){
 
@@ -23,4 +28,27 @@ return (
 
 }
 
-export {MainContent2}
+function MainContent( {module, setModule}){
+switch (module){
+case "Etudiants" : 
+return (<Etudiants/>)
+
+case "Matieres" :
+    return (<Matieres/>)
+
+case "Notes" : 
+    return (<Notes/>)
+
+case "APropos":
+    return (<APropos/>)
+case "Accueil":
+    return (
+        <div></div>
+    )
+    default : return (<p>Page introuvable</p>)
+}
+
+}
+
+
+export {MainContent2, MainContent}
