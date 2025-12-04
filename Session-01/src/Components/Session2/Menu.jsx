@@ -1,5 +1,5 @@
 import "../../../src/menu.css"
-import { Header } from "../Session1"
+import { Header, Logo} from "../Session1"
 
 const menus = [
     "Notes",
@@ -23,8 +23,9 @@ function MenuItem({item, onSelect}){
 )
 }
 
-function Menu({exclusive, onSelect}){
-if(exclusive){    
+function Menu({exclusive, isopen, setIsOpen, onSelect}){
+if(exclusive){   
+    
 return (
     <div>
         <Header/>
@@ -42,8 +43,12 @@ return (
 )}
 else{
     return (
+    <div className="sidebar-container">
+        
     <div className="menu-container">
-        <Header/>
+        <div className="header-container">
+            <Logo/>
+        </div>
         {
             menus.map((element, index) =>{
                 return(
@@ -52,6 +57,7 @@ else{
 
             })
         }
+    </div>
     </div>
 )
 }

@@ -17,9 +17,10 @@ function App() {
   
   const index = Math.floor(Math.random()* data.length);
   const [module, setModule] = useState("Accueil"); 
+  const [isOpen, setIsOpen] = useState(true);
   return (
     <>
-    <main>
+    <main className="page-content">
        <Menu exclusive={module ==="Accueil"} onSelect ={setModule}/>
       
       <MainContent module={module} setModule={setModule}/> 

@@ -1,11 +1,31 @@
+function Title(){
+  return (
+<h1>Introduction à React</h1>
+  )
+}
+
+function Subtitle(){
+  return(
+    <>
+      <h3>A la découverte des premières notions de React</h3>
+      <hr/>
+    </>
+  )
+}
+
+function Logo(){
+  return(
+      <img src='/mbds_logo_transparent.svg' alt="Le logo MBDS que je n'ai pas.">
+      </img>
+  )
+}
 
 function Header(){
   return (
-    <div>
-      <img src='/mbds_logo_transparent.svg' alt="Le logo MBDS que je n'ai pas."></img>
-      <h1>Introduction à React</h1>
-      <h3>A la découverte des premières notions de React</h3>
-      <hr/>
+    <div className="header-container">
+      <Logo/>
+      <Title/>
+      <Subtitle/>
     </div>
     
   )
@@ -26,11 +46,11 @@ function Footer(){
   
   const date = new Date();
   return (
-    <footer>
+    <div className="footer">
       {date.getFullYear()} - <b>Henry Samantha</b>, tous droits réservés.
-    </footer>
+    </div>
   )
 }
 
 
-export {Header, ShowDateAndHours as MainContent1, Footer}
+export {Header, ShowDateAndHours as MainContent1, Logo, Footer}
