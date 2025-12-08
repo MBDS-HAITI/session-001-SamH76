@@ -53,24 +53,41 @@ function BasicTable({ rows }) {
 }
 
 function GridMode(){
-     const rows = data.map((item, index) => ({
+    /*  const rows = data.map((item, index) => ({
     id: item.student.id,
     firstname: item.student.firstname,
     lastname: item.student.lastname,
     course : item.course,
     grade : item.grade
-  }));
+  })); */
+  const [newList, setNewList] = React.useState([]);
+  React.useEffect(()=>{
+          fetch("http://localhost:8010/api/grades")
+          .then(data => data.json())
+          .then( result =>{
+            const newFormat = result.map(g => ({
+                _id: g._id,
+                studentId: g.student?._id || "",
+                firstName: g.student?.firstName || "",
+                lastName: g.student?.lastName || "",
+                courseName: g.course?.name || "",
+                grade: g.grade
+            })); 
+            setNewList(newFormat)})
+          .catch(error => console.error('erreur dans le chargement des notes: ', error));
+      }, []);
   const columns = [
-    { field: "id", headerName: "Id étudiant", flex: 1 },
-    { field: "firstname", headerName: "Prénom", flex: 1 },
-    { field: "lastname", headerName: "Nom", flex: 1 },
-    { field: "course", headerName: "Cours", flex: 1 },
+    { field: "studentId", headerName: "Id étudiant", flex: 1 },
+    { field: "firstName", headerName: "Prénom", flex: 1},
+    { field: "lastName", headerName: "Nom", flex: 1},
+    { field: "courseName", headerName: "Cours", flex: 1},
     { field: "grade", headerName: "Note", flex: 1 }
   ];
     return(
 <ThemeProvider theme={theme}>
       <DataGrid
-        rows={rows}
+        rows={newList}
+        getRowId={(row) => row._id}
         columns={columns}
         pageSizeOptions={[5, 10, 25]}
         initialState={{

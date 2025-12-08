@@ -41,7 +41,6 @@ return newList;
 
 function BasicTable({ rows }) {
 let newList = Filter(data);
-newList.push(rows[0]);
   return (
     
     <TableContainer component={Paper}>
@@ -69,21 +68,30 @@ newList.push(rows[0]);
 }
 
 function GridMode(){
-    let newList = Filter(data);
+   /*  let newList = Filter(data);
      const rows = newList.map((item, index) => ({
     id: item.student.id,
     firstname: item.student.firstname,
     lastname: item.student.lastname,
-  }));
+  })); */
+
+const [newList, setNewList] = React.useState([]);
+React.useEffect(()=>{
+    fetch("http://localhost:8010/api/students")
+    .then(data => data.json())
+    .then( result => setNewList(result))
+    .catch(error => console.error('erreur dans le chargement des étudiants: ', error));
+}, []);
   const columns = [
-    { field: "id", headerName: "Id", flex: 1 },
-    { field: "firstname", headerName: "Prénom", flex: 1 },
-    { field: "lastname", headerName: "Nom", flex: 1 }
+    { field: "_id", headerName: "Id", flex: 1 },
+    { field: "firstName", headerName: "Prénom", flex: 1 },
+    { field: "lastName", headerName: "Nom", flex: 1 }
   ];
     return(
     <ThemeProvider theme={theme}>
       <DataGrid
-        rows={rows}
+        rows={newList}
+        getRowId={(row) => row._id}
         columns={columns}
         pageSizeOptions={[5, 10, 25]}
         initialState={{

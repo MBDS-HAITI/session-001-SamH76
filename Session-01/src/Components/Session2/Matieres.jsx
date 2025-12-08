@@ -64,19 +64,23 @@ function BasicTable({ rows }) {
 }
 
 function GridMode(){
-    let newList = Filter(data);
-     const rows = newList.map((item, index) => ({
-    id: index,
-    course: item.course
-  }));
+    
+    const [newList, setNewList] = React.useState([]);
+    React.useEffect(()=>{
+        fetch("http://localhost:8010/api/courses")
+        .then(data => data.json())
+        .then( result => setNewList(result))
+        .catch(error => console.error('erreur dans le chargement des cours: ', error));
+    }, []);
   const columns = [
-    { field: "id", headerName: "No", flex: 1 },
-    { field: "course", headerName: "Intitulé cours", flex: 1 }
+    { field: "code", headerName: "Code", flex: 1 },
+    { field: "name", headerName: "Intitulé cours", flex: 1 }
   ];
     return(
 <ThemeProvider theme={theme}>
       <DataGrid
-        rows={rows}
+        rows={newList}
+        getRowId={(row) => row._id}
         columns={columns}
         pageSizeOptions={[5, 10, 25]}
         initialState={{
